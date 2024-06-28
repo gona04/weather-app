@@ -7,7 +7,7 @@ const UNIT = "metric";
 const getWeatherDataAPICall = async (cityName: string) => {
   console.log("in Service");
   const response = await fetch(
-    `${BASE_URL}?q=${cityName}&appid=${API_ID}&units=${UNIT}`
+    `${BASE_URL}?q=${cityName}&appid=${API_ID}&units=${UNIT}&exclude="minutely,hourly,alerts"`
   );
   return await response.json();
 };

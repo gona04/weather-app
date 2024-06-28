@@ -21,6 +21,7 @@ const WeatherCardComponent = (props: { weatherData: Iweather }) => {
           {props.weatherData.main.feels_like}
         </li>
         <li>Humidity: {props.weatherData.main.humidity} </li>
+        <li>Weather: {props.weatherData.weather[0].main} </li>
       </ul>
     </div>
   );
