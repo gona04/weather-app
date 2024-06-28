@@ -6,7 +6,7 @@ import { Iweather } from "../model/weather.class";
 import WeatherCardComponent from "./WeatherCard.component";
 
 const Home = () => {
-  const [cityName, setCityName] = useState<string>(" ");
+  const [cityName, setCityName] = useState<string>("");
   const [weatherData, setWeatherData] = useState<Iweather>();
 
   const getTemperature = (event: any) => {
@@ -17,10 +17,8 @@ const Home = () => {
   };
 
   useEffect(() => {
-    if (cityName.length > 1) {
-      getWeatherData(cityName);
-    }
-  }, [cityName]);
+    getWeatherData(cityName);
+  }, [cityName, []]);
 
   async function getWeatherData(cityName: string): Promise<any> {
     const response: any = await getWeatherDataAPICall(cityName);
