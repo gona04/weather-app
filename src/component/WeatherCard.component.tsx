@@ -16,6 +16,8 @@ const WeatherCardComponent = (props: { weatherData: Iweather }) => {
         {props.weatherData.main.temp}
       </span>
       <ul>
+        <li>Min: {props.weatherData.main.temp_min} </li>
+        <li>Max: {props.weatherData.main.temp_max} </li>
         <li>
           Feels Like:
           {props.weatherData.main.feels_like}

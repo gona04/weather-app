@@ -25,7 +25,7 @@ body {
     align-items: center;
     width: 100vw;
     height: fit-content;
-    padding: 5rem 0;
+    padding: 2rem 0;
     justify-content: start;
 }
 
@@ -62,15 +62,18 @@ button {
 
 /* WEATHER COMPONENT */
 .weather-content {
-    width: 70%; /* Maximum width of 70% */
-    max-width: 600px; /* Optional: Set a max-width limit */
+    width: 50%; 
     height: fit-content;
     padding: 1rem;
     border-radius: 2rem;
     color: var(--white);
     background: var(--blue-theme);
     border: 1px solid var(--blue-theme-transparent);
-    margin: 0 auto; /* Center the element horizontally */
+    margin: 0 auto;
+}
+
+.weather-content h4 {
+        padding-left:5%;
 }
 
 .weather-content ul {
@@ -82,7 +85,7 @@ button {
 }
 
 .weather-content span {
-    font-size: 1rem;
+    font-size: 1.5rem;
     height: 5rem;
     align-items: end;
     display: flex;
