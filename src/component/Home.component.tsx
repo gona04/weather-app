@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Header from "./Header.component";
+import "../styles.css";
 import getWeatherDataAPICall from "../service/weather.service";
 import { Iweather } from "../model/weather.class";
 
