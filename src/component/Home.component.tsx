@@ -25,6 +25,10 @@ const Home = () => {
   async function getWeatherData(cityName: string): Promise<any> {
     const response: any = await getWeatherDataAPICall(cityName);
     console.log(response);
+    if (response.cod == "404") {
+      alert(response.message);
+      return;
+    }
     setWeatherData(response);
   }
   return (
