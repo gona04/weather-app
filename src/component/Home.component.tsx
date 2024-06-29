@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import Header from "./Header.component";
-import "../styles.css";
 import getWeatherDataAPICall from "../service/weather.service";
 import { Iweather } from "../model/weather.class";
 import WeatherCardComponent from "./WeatherCard.component";
@@ -44,7 +43,7 @@ const Home = () => {
         aria-labelledby="weatherSearchHeading"
       >
         <form className="form-content" id="cityForm" onSubmit={getTemperature}>
-          <label htmlFor="cityName">City Name</label>
+          <label htmlFor="cityName">Search By City Name</label>
           <input
             type="text"
             name="cityName"
