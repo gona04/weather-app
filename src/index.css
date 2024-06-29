@@ -96,7 +96,7 @@ button:hover {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.weather-content h4 {
+.weather-content h3 {
     margin-top:0;
     padding-left: 5%;
     font-size: 1.5rem;

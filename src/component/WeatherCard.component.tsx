@@ -45,9 +45,9 @@ const WeatherCardComponent = (props: { weatherData: Iweather }) => {
       role="status"
       aria-label={`Weather in ${props.weatherData.name}`}
     >
-      <h4>
-        {props.weatherData.name} , {props.weatherData.sys.country}
-      </h4>
+      <h3>
+        {props.weatherData.name}, {props.weatherData.sys.country}
+      </h3>
       <div className="weather-main">
         <FontAwesomeIcon
           className="weather-icon"
