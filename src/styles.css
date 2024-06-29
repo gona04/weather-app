@@ -4,7 +4,7 @@
 body {
     box-sizing: content-box;
     font-size: 1rem;
-    background-color: var(--blue-theme-transparent);
+    background-color: var(--blue-theme-darker);
 }
 
 /* HEADER COMPONENT */
@@ -72,6 +72,14 @@ button {
     margin: 0 auto;
 }
 
+.arrow-down {
+    color: var(--orange);
+}
+
+.arrow-up {
+    color: var(--red);
+}
+
 .weather-content h4 {
         padding-left:5%;
 }
@@ -80,15 +88,23 @@ button {
     list-style-type: none;
     color: var(--white);
     display: flex;
-    gap: 3rem;
+    padding:0;
+    justify-content: space-around;
     flex-direction: row;
 }
+
+.weather-content li {
+    display: flex;
+    gap: 1rem;
+}
+
 
 .weather-content span {
     font-size: 1.5rem;
     height: 5rem;
-    align-items: end;
+    align-items: center;
     display: flex;
+    gap: 1rem;
     flex-direction: row;
     justify-content: center;
 }
