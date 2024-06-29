@@ -12,7 +12,6 @@ const Home = () => {
   const getTemperature = (event: any) => {
     event.preventDefault();
     const cityName = event.target[0].value;
-    console.dir(cityName);
     setCityName(cityName);
   };
 
@@ -23,7 +22,6 @@ const Home = () => {
   const fetchData = async () => {
     try {
       const response: any = await getWeatherDataAPICall(cityName);
-      console.log(response);
       if (response.cod === "404") {
         alert(response.message);
         return;
@@ -40,20 +38,25 @@ const Home = () => {
         <Header />
       </article>
 
-      <section className="section-content">
+      <section
+        className="section-content"
+        role="search"
+        aria-labelledby="weatherSearchHeading"
+      >
         <form className="form-content" id="cityForm" onSubmit={getTemperature}>
-          <label htmlFor="cityName"> City Name </label>
+          <label htmlFor="cityName">City Name</label>
           <input
             type="text"
             name="cityName"
             id="cityName"
             placeholder="Please enter city name"
+            aria-label="Enter city name"
           />
           <button type="submit">Get temperature</button>
         </form>
       </section>
 
-      <main className="card-container">
+      <main className="card-container" role="status" aria-live="polite">
         {weatherData && <WeatherCardComponent weatherData={weatherData} />}
       </main>
     </>
