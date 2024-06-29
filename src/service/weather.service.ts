@@ -5,7 +5,6 @@ const API_ID = "017dde2927e030d8dc2069f101b19b37";
 const UNIT = "metric";
 
 const getWeatherDataAPICall = async (cityName: string) => {
-  console.log("in Service");
   let FULLURL;
 
   if (cityName !== "") {
@@ -36,7 +35,6 @@ const callCurrentLocation = async (): Promise<{ lat: number; log: number }> => {
     const position = await getCurrentLocation();
     const latitude = position.coords.latitude;
     const longitude = position.coords.longitude;
-    console.log(`Latitude: ${latitude}, Longitude: ${longitude}`);
     return { lat: latitude, log: longitude };
   } catch (error) {
     console.error("Error getting current location:", error);
