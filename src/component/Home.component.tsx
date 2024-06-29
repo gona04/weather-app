@@ -16,21 +16,21 @@ const Home = () => {
   };
 
   useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response: any = await getWeatherDataAPICall(cityName);
+        if (response.cod === "404") {
+          alert(response.message);
+          return;
+        }
+        setWeatherData(response);
+      } catch (error) {
+        console.error("Error fetching weather data:", error);
+      }
+    };
+
     fetchData();
   }, [cityName]);
-
-  const fetchData = async () => {
-    try {
-      const response: any = await getWeatherDataAPICall(cityName);
-      if (response.cod === "404") {
-        alert(response.message);
-        return;
-      }
-      setWeatherData(response);
-    } catch (error) {
-      console.error("Error fetching weather data:", error);
-    }
-  };
 
   return (
     <>
