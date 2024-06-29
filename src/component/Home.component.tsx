@@ -33,14 +33,26 @@ const Home = () => {
 
   return (
     <>
-      <article className="article-header">
+      <article
+        className="article-header"
+        tabIndex={0}
+        aria-label="Header of the app"
+      >
         <Header />
       </article>
 
-      <section className="section-content" role="search">
-        <form className="form-content" id="cityForm" onSubmit={getTemperature}>
-          <label htmlFor="cityName">City Name</label>
+      <section className="section-content" role="search" tabIndex={4}>
+        <form
+          className="form-content"
+          id="cityForm"
+          tabIndex={5}
+          onSubmit={getTemperature}
+        >
+          <label htmlFor="cityName" tabIndex={6}>
+            City Name
+          </label>
           <input
+            tabIndex={7}
             type="text"
             name="cityName"
             id="cityName"
@@ -48,11 +60,18 @@ const Home = () => {
             aria-label="Search By City Name"
             required
           />
-          <button type="submit">Get temperature</button>
+          <button type="submit" tabIndex={8}>
+            Get temperature
+          </button>
         </form>
       </section>
 
-      <main className="card-container" role="status" aria-live="polite">
+      <main
+        className="card-container"
+        tabIndex={9}
+        role="status"
+        aria-live="polite"
+      >
         {weatherData && <WeatherCardComponent weatherData={weatherData} />}
       </main>
     </>
