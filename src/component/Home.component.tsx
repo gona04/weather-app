@@ -46,6 +46,7 @@ const Home = () => {
             id="cityName"
             placeholder="Search By City Name"
             aria-label="Search By City Name"
+            required
           />
           <button type="submit">Get temperature</button>
         </form>
