@@ -8,9 +8,12 @@ const Home = () => {
   const [cityName, setCityName] = useState<string>("");
   const [weatherData, setWeatherData] = useState<Iweather>();
 
-  const getTemperature = (event: any) => {
+  const getTemperature = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const cityName = event.target[0].value;
+    const cityNameInput = event.currentTarget.elements.namedItem(
+      "cityName"
+    ) as HTMLInputElement | null;
+    const cityName = cityNameInput?.value || "";
     setCityName(cityName);
   };
 
@@ -33,26 +36,21 @@ const Home = () => {
 
   return (
     <>
-      <article
-        className="article-header"
-        tabIndex={0}
-        aria-label="Header of the app"
-      >
+      <article className="article-header" aria-label="Header of the app">
         <Header />
       </article>
 
-      <section className="section-content" role="search" tabIndex={4}>
+      <section className="section-content" role="search">
         <form
           className="form-content"
           id="cityForm"
-          tabIndex={5}
           onSubmit={getTemperature}
+          aria-labelledby="cityFormLabel"
         >
-          <label htmlFor="cityName" tabIndex={6}>
+          <label id="cityFormLabel" htmlFor="cityName">
             City Name
           </label>
           <input
-            tabIndex={7}
             type="text"
             name="cityName"
             id="cityName"
@@ -60,18 +58,11 @@ const Home = () => {
             aria-label="Search By City Name"
             required
           />
-          <button type="submit" tabIndex={8}>
-            Get temperature
-          </button>
+          <button type="submit">Get temperature</button>
         </form>
       </section>
 
-      <main
-        className="card-container"
-        tabIndex={9}
-        role="status"
-        aria-live="polite"
-      >
+      <main className="card-container" role="status" aria-live="polite">
         {weatherData && <WeatherCardComponent weatherData={weatherData} />}
       </main>
     </>
