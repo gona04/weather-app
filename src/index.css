@@ -52,9 +52,9 @@ code {
 }
 
 input[type="text"] {
+    color: var(--blue-theme);
     height: 3rem;
     font-size: 1rem;
-    color: var(--white);
     border: none;
     border-bottom: 1px var(--blue-theme) solid;
     outline-color: transparent;
@@ -63,7 +63,6 @@ input[type="text"] {
 }
 
 input[type="text"]:focus {
-    border-bottom: 1px var(--blue-theme-darker) solid;
     background: transparent;
     outline: transparent;
 }
@@ -79,7 +78,7 @@ button {
 }
 
 button:hover {
-    background-color: var(--blue-theme-transparent);
+    /* background-color: var(--blue-theme-transparent); */
     cursor: pointer;
 }
 

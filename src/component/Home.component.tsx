@@ -39,17 +39,16 @@ const Home = () => {
 
       <section
         className="section-content"
-        role="search"
+        role="search form"
         aria-labelledby="weatherSearchHeading"
       >
         <form className="form-content" id="cityForm" onSubmit={getTemperature}>
-          <label htmlFor="cityName">Search By City Name</label>
           <input
             type="text"
             name="cityName"
             id="cityName"
-            placeholder="Please enter city name"
-            aria-label="Enter city name"
+            placeholder="Search By City Name"
+            aria-label="Search By City Name"
           />
           <button type="submit">Get temperature</button>
         </form>
