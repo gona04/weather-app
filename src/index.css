@@ -44,7 +44,7 @@ code {
 }
 
 .form-content {
-    color: var(--blue-theme);
+    color: var(--white);
     display: flex;
     gap: 1rem;
     flex-direction: column;
@@ -52,7 +52,7 @@ code {
 }
 
 input[type="text"] {
-    color: var(--blue-theme);
+    color: var(--white);
     height: 3rem;
     font-size: 1rem;
     border: none;

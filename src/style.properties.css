@@ -1,12 +1,3 @@
-/* :root {
-    --blue-theme: #3f828d;
-    --blue-theme-transparent: #8fb4bb82;
-    --blue-theme-darker:#1c4147;
-    --white: #ffff;
-    --orange: rgb(255, 191, 0);
-    --red:rgb(194, 6, 6);
-} */
-
 :root {
     --blue-theme: #1a5673; /* Darker blue for better contrast */
     --blue-theme-transparent: rgba(26, 86, 115, 0.5); /* Adjusted transparent blue */
