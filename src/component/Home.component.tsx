@@ -20,21 +20,21 @@ const Home = () => {
     setCityName(cityName);
   };
 
-  const fetchData = async () => {
-    try {
-      const response: any = await getWeatherDataAPICall(cityName);
-      if (response.cod === "404") {
-        alert(response.message);
-      } else {
-        console.log("weather getting set");
-        setWeatherData(response);
-      }
-    } catch (error) {
-      console.error("Error fetching weather data:", error);
-    }
-  };
-
   useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response: any = await getWeatherDataAPICall(cityName);
+        if (response.cod === "404") {
+          alert(response.message);
+        } else {
+          console.log("weather getting set");
+          setWeatherData(response);
+        }
+      } catch (error) {
+        console.error("Error fetching weather data:", error);
+      }
+    };
+
     fetchData();
   }, [cityName]);
 
