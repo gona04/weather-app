@@ -3,10 +3,13 @@ import Header from "./Header.component";
 import getWeatherDataAPICall from "../service/weather.service";
 import { Iweather } from "../model/weather.class";
 import WeatherCardComponent from "./WeatherCard.component";
+import { IUserDetails } from "../model/userDetails";
+import { getUserIPAddress } from "../service/userData.service";
 
 const Home = () => {
   const [cityName, setCityName] = useState<string>("");
-  const [weatherData, setWeatherData] = useState<Iweather>();
+  const [weatherData, setWeatherData] = useState<Iweather | null>(null);
+  const [userDetails, setUserDetails] = useState<IUserDetails | null>(null);
 
   const getTemperature = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -17,22 +20,53 @@ const Home = () => {
     setCityName(cityName);
   };
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response: any = await getWeatherDataAPICall(cityName);
-        if (response.cod === "404") {
-          alert(response.message);
-          return;
-        }
+  const fetchData = async () => {
+    try {
+      const response: any = await getWeatherDataAPICall(cityName);
+      if (response.cod === "404") {
+        alert(response.message);
+      } else {
+        console.log("weather getting set");
         setWeatherData(response);
-      } catch (error) {
-        console.error("Error fetching weather data:", error);
+      }
+    } catch (error) {
+      console.error("Error fetching weather data:", error);
+    }
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, [cityName]);
+
+  useEffect(() => {
+    const setUserData = async () => {
+      if (weatherData) {
+        try {
+          const iPaddress = await getUserIPAddress();
+          const userDt: IUserDetails = {
+            userId: "",
+            ip: iPaddress.ip,
+            login_country: weatherData.sys.country,
+            login_state: weatherData.name,
+          };
+          setUserDetails(userDt);
+        } catch (error) {
+          console.error("Error fetching IP address:", error);
+        }
       }
     };
 
-    fetchData();
-  }, [cityName]);
+    if (weatherData !== null) {
+      setUserData();
+    }
+  }, [weatherData]);
+
+  useEffect(() => {
+    //backend call from here to save the user details in the bakend
+    if (userDetails !== null) {
+      console.dir(userDetails);
+    }
+  }, [userDetails]);
 
   return (
     <>
