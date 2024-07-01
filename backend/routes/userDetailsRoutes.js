@@ -1,12 +1,11 @@
 const express = require("express");
-const UserDetails = require("../models/userDetails"); // Adjust path as needed
-// eslint-disable-next-line new-cap
+const UserDetails = require("../models/userDetails");
 const router = express.Router();
 
 // Express route for retrieving user details
-router.get(async (req, res) => {
+router.get("/", async (req, res) => { // Add "/" to the path
   try {
-    // Retrieve all user details from database
+    console.log("in get");
     const allUserDetails = await UserDetails.findAll();
     console.log(allUserDetails);
     res.status(200).json(allUserDetails);
@@ -17,11 +16,10 @@ router.get(async (req, res) => {
 });
 
 // Express route for saving user details
-router.post(async (req, res) => {
+router.post("/", async (req, res) => { // Add "/" to the path
   try {
     const {ip, loginCountry, loginState} = req.body;
 
-    // Save user details to database
     const newUserDetails = await UserDetails.create({
       ip,
       loginCountry,

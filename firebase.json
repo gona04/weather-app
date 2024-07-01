@@ -15,7 +15,7 @@
   },
   "functions": [
     {
-      "source": "functions",
+      "source": "./backend",
       "codebase": "default",
       "ignore": [
         "node_modules",
@@ -23,8 +23,8 @@
         "firebase-debug.log",
         "firebase-debug.*.log"
       ],
+      "runtime": "nodejs18",
       "predeploy": [
-        "npm --prefix \"$RESOURCE_DIR\" run lint"
       ]
     }
   ]
