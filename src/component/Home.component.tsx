@@ -4,7 +4,7 @@ import getWeatherDataAPICall from "../service/weather.service";
 import { Iweather } from "../model/weather.class";
 import WeatherCardComponent from "./WeatherCard.component";
 import { IUserDetails } from "../model/userDetails";
-import { getUserIPAddress } from "../service/userData.service";
+import { getUserIPAddress, saveUserDetails } from "../service/userData.service";
 
 const Home = () => {
   const [cityName, setCityName] = useState<string>("");
@@ -44,7 +44,7 @@ const Home = () => {
         try {
           const iPaddress = await getUserIPAddress();
           const userDt: IUserDetails = {
-            userId: "",
+            userId: "", // You may need to set this based on your authentication setup
             ip: iPaddress.ip,
             login_country: weatherData.sys.country,
             login_state: weatherData.name,
@@ -56,16 +56,22 @@ const Home = () => {
       }
     };
 
-    if (weatherData !== null) {
-      setUserData();
-    }
+    setUserData();
   }, [weatherData]);
 
   useEffect(() => {
-    //backend call from here to save the user details in the bakend
-    if (userDetails !== null) {
-      console.dir(userDetails);
-    }
+    const saveUserData = async () => {
+      if (userDetails !== null) {
+          try {
+              await saveUserDetails(userDetails);
+              console.log("User details saved successfully");
+          } catch (error) {
+              console.error("Error saving user details:", error);
+          }
+      }
+  };
+
+  saveUserData();
   }, [userDetails]);
 
   return (

@@ -1,5 +1,10 @@
+import { IUserDetails } from "../model/userDetails";
+const user_details_localhost = "http://localhost:5002/api/user-details";
+const userDetailsPost = "http://localhost:5001/weather-app-44bc2/us-central1/weather_api/api/user-details";
+
+const userDetailsAPI = "https://us-central1-weather-app-44bc2.cloudfunctions.net/weather_api/api/user-details";
+
 export const getUserIPAddress = (): Promise<{ ip: string }> => {
-    dataTesting();
     console.log('Method called');
     return fetch('https://api.ipify.org?format=json')
         .then(response => response.json())
@@ -19,10 +24,21 @@ export const getCurrentLocation = (): Promise<GeolocationPosition> =>
         navigator.geolocation.getCurrentPosition(resolve, reject);
     });
 
-const dataTesting = () => {
-    fetch("http://localhost:5002/weather_api/").then(result => {
-        console.log(result);
-    }).catch(error => {
-        console.log(error);
-    })
-}
+export const saveUserDetails = async (userDetails: IUserDetails): Promise<void> => {
+    try {
+        const response = await fetch(user_details_localhost, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(userDetails),
+        });
+
+        if (!response.ok) {
+            throw new Error('Failed to save user details');
+        }
+    } catch (error) {
+        console.error('Error saving user details:', error);
+        throw error;
+    }
+};
