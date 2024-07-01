@@ -5,11 +5,9 @@ import { IUserDetails } from "../model/userDetails";
 const userDetailsAPI = "https://us-central1-weather-app-44bc2.cloudfunctions.net/weather_api/api/user-details";
 
 export const getUserIPAddress = (): Promise<{ ip: string }> => {
-    console.log('Method called');
     return fetch('https://api.ipify.org?format=json')
         .then(response => response.json())
         .then(data => {
-            console.log('IP Address:', data.ip);
             return data;
         })
         .catch(error => {

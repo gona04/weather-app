@@ -31,7 +31,7 @@ const callCurrentLocation = async (): Promise<{ lat: number; log: number }> => {
     return { lat: latitude, log: longitude };
   } catch (error) {
     console.error("Error getting current location:", error);
-    throw error; // Throw the error so it can be handled in the calling function
+    throw error;
   }
 };
 

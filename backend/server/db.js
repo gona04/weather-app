@@ -13,11 +13,11 @@ const sequelize = new Sequelize({
   host: "weather-api-db.mysql.database.azure.com",
   username: "gona04",
   password: "Goonja@1990",
-  database: "weather_app_db", // Use the new database
+  database: "weather_app_db", 
   dialectOptions: {
     ssl: {
       ca: sslCert,
-      rejectUnauthorized: false, // Accept self-signed certificates
+      rejectUnauthorized: false, 
     },
   },
   logging: console.log,

@@ -27,7 +27,6 @@ const Home = () => {
         if (response.cod === "404") {
           alert(response.message);
         } else {
-          console.log("weather getting set");
           setWeatherData(response);
         }
       } catch (error) {
@@ -44,7 +43,7 @@ const Home = () => {
         try {
           const iPaddress = await getUserIPAddress();
           const userDt: IUserDetails = {
-            userId: "", // You may need to set this based on your authentication setup
+            userId: "",
             ip: iPaddress.ip,
             login_country: weatherData.sys.country,
             login_state: weatherData.name,
@@ -64,7 +63,6 @@ const Home = () => {
       if (userDetails !== null) {
           try {
               await saveUserDetails(userDetails);
-              console.log("User details saved successfully");
           } catch (error) {
               console.error("Error saving user details:", error);
           }
