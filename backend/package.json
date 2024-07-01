@@ -11,6 +11,8 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.19.2",
+    "firebase-admin": "^12.2.0",
+    "firebase-functions": "^5.0.1",
     "mysql2": "^3.10.1",
     "sequelize": "^6.37.3"
   }
