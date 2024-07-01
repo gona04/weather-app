@@ -1,0 +1,97 @@
+[debug] [2024-07-01T18:35:59.796Z] ----------------------------------------------------------------------
+[debug] [2024-07-01T18:35:59.798Z] Command:       /Users/workgoonja/.nvm/versions/node/v20.11.0/bin/node /Users/workgoonja/.nvm/versions/node/v20.11.0/bin/firebase serve
+[debug] [2024-07-01T18:35:59.799Z] CLI Version:   13.3.0
+[debug] [2024-07-01T18:35:59.799Z] Platform:      darwin
+[debug] [2024-07-01T18:35:59.799Z] Node Version:  v20.11.0
+[debug] [2024-07-01T18:35:59.799Z] Time:          Mon Jul 01 2024 14:35:59 GMT-0400 (Eastern Daylight Time)
+[debug] [2024-07-01T18:35:59.799Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-07-01T18:35:59.894Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-07-01T18:35:59.894Z] > authorizing via signed-in user (gona.gandhi@gmail.com)
+[debug] [2024-07-01T18:35:59.895Z] [iam] checking project weather-app-44bc2 for permissions ["firebase.projects.get"]
+[debug] [2024-07-01T18:35:59.895Z] > refreshing access token with scopes: []
+[debug] [2024-07-01T18:35:59.896Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2024-07-01T18:35:59.897Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-07-01T18:36:00.069Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2024-07-01T18:36:00.069Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-07-01T18:36:00.081Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/weather-app-44bc2:testIamPermissions [none]
+[debug] [2024-07-01T18:36:00.081Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/weather-app-44bc2:testIamPermissions x-goog-quota-user=projects/weather-app-44bc2
+[debug] [2024-07-01T18:36:00.081Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/weather-app-44bc2:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2024-07-01T18:36:00.401Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/weather-app-44bc2:testIamPermissions 200
+[debug] [2024-07-01T18:36:00.402Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/weather-app-44bc2:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2024-07-01T18:36:00.403Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/weather-app-44bc2 [none]
+[debug] [2024-07-01T18:36:00.891Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/weather-app-44bc2 200
+[debug] [2024-07-01T18:36:00.891Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/weather-app-44bc2 {"projectId":"weather-app-44bc2","projectNumber":"344152108574","displayName":"weather-app","name":"projects/weather-app-44bc2","resources":{"hostingSite":"weather-app-44bc2"},"state":"ACTIVE","etag":"1_3098a4db-c27e-4e4b-bd56-a8dde8d2503d"}
+[info] 
+[info] === Serving from '/Users/workgoonja/Documents/Assignment/weather-app'...
+[info] 
+[debug] [2024-07-01T18:36:00.900Z] defaultcredentials: writing to file /Users/workgoonja/.config/firebase/gona_gandhi_gmail.com_application_default_credentials.json
+[debug] [2024-07-01T18:36:00.901Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/weather-app-44bc2/sites 
+[debug] [2024-07-01T18:36:00.904Z] Setting GAC to /Users/workgoonja/.config/firebase/gona_gandhi_gmail.com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to /Users/workgoonja/.config/firebase/gona_gandhi_gmail.com_application_default_credentials.json"}}
+[debug] [2024-07-01T18:36:00.905Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/weather-app-44bc2/adminSdkConfig [none]
+[debug] [2024-07-01T18:36:01.103Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/weather-app-44bc2/adminSdkConfig 200
+[debug] [2024-07-01T18:36:01.103Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/weather-app-44bc2/adminSdkConfig {"projectId":"weather-app-44bc2","storageBucket":"weather-app-44bc2.appspot.com"}
+[debug] [2024-07-01T18:36:01.403Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/weather-app-44bc2/sites 200
+[debug] [2024-07-01T18:36:01.403Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/weather-app-44bc2/sites {"sites":[{"name":"projects/weather-app-44bc2/sites/weather-app-44bc2","defaultUrl":"https://weather-app-44bc2.web.app","type":"DEFAULT_SITE"}]}
+[debug] [2024-07-01T18:36:01.404Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/weather-app-44bc2/webApps/-/config [none]
+[debug] [2024-07-01T18:36:01.810Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/weather-app-44bc2/webApps/-/config 200
+[debug] [2024-07-01T18:36:01.811Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/weather-app-44bc2/webApps/-/config {"projectId":"weather-app-44bc2","storageBucket":"weather-app-44bc2.appspot.com","apiKey":"AIzaSyDDxQlOnz80ppW0hiN2f1UbvpLfgMKs5hg","authDomain":"weather-app-44bc2.firebaseapp.com","messagingSenderId":"344152108574"}
+[debug] [2024-07-01T18:36:01.818Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/weather-app-44bc2 [none]
+[debug] [2024-07-01T18:36:02.124Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/weather-app-44bc2 200
+[debug] [2024-07-01T18:36:02.125Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/weather-app-44bc2 {"projectId":"weather-app-44bc2","projectNumber":"344152108574","displayName":"weather-app","name":"projects/weather-app-44bc2","resources":{"hostingSite":"weather-app-44bc2"},"state":"ACTIVE","etag":"1_3098a4db-c27e-4e4b-bd56-a8dde8d2503d"}
+[info] i  functions: Watching "/Users/workgoonja/Documents/Assignment/weather-app/functions" for Cloud Functions... {"metadata":{"emulator":{"name":"functions"},"message":"Watching \"/Users/workgoonja/Documents/Assignment/weather-app/functions\" for Cloud Functions..."}}
+[info] i  hosting[weather-app-44bc2]: Serving hosting files from: build {"metadata":{"emulator":{"name":"hosting"},"message":"Serving hosting files from: \u001b[1mbuild\u001b[22m"}}
+[info] ✔  hosting[weather-app-44bc2]: Local server: http://localhost:5002 {"metadata":{"emulator":{"name":"hosting"},"message":"Local server: \u001b[4m\u001b[1mhttp://localhost:5002\u001b[22m\u001b[24m"}}
+[debug] [2024-07-01T18:36:02.262Z] Validating nodejs source
+[warn] ⚠  functions: package.json indicates an outdated version of firebase-functions. Please upgrade using npm install --save firebase-functions@latest in your functions directory. 
+[warn] ⚠  functions: Please note that there will be breaking changes when you upgrade. 
+[debug] [2024-07-01T18:36:02.788Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "firebase-admin": "^11.8.0",
+    "firebase-functions": "^4.3.1",
+    "mysql2": "^3.10.1",
+    "sequelize": "^6.37.3"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "eslint": "^8.15.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2024-07-01T18:36:02.788Z] Building nodejs source
+[debug] [2024-07-01T18:36:02.789Z] Failed to find version of module node: reached end of search path /Users/workgoonja/Documents/Assignment/weather-app/functions/node_modules
+[warn] ⚠  functions: Your requested "node" version "18" doesn't match your global version "20". Using node@20 from host. 
+[debug] [2024-07-01T18:36:02.790Z] Could not find functions.yaml. Must use http discovery
+[debug] [2024-07-01T18:36:02.795Z] Found firebase-functions binary at '/Users/workgoonja/Documents/Assignment/weather-app/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8299
+
+[info] Server running on port 5002
+
+[debug] [2024-07-01T18:36:03.266Z] Got response from /__/functions.yaml {"endpoints":{"web_api":{"platform":"gcfv1","availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"serviceAccountEmail":null,"vpc":null,"httpsTrigger":{},"entryPoint":"web_api"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[info] Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'user_details' AND TABLE_SCHEMA = 'weather_app_db'
+
+[info] Executing (default): SHOW INDEX FROM `user_details` FROM `weather_app_db`
+
+[info] Database synced
+
+[info] i  hosting: ::1 - - [01/Jul/2024:18:36:06 +0000] "GET /weather_api/ HTTP/1.1" 304 - "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"::1 - - [01/Jul/2024:18:36:06 +0000] \"GET /weather_api/ HTTP/1.1\" 304 - \"-\" \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36\""}}
+[info] ✔  functions: Loaded functions definitions from source: web_api. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: web_api."}}
+[info] ✔  functions[us-central1-web_api]: http function initialized (http://localhost:5001/weather-app-44bc2/us-central1/web_api). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://localhost:5001/weather-app-44bc2/us-central1/web_api)."}}
