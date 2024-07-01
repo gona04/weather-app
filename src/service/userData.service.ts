@@ -1,6 +1,6 @@
 import { IUserDetails } from "../model/userDetails";
-const user_details_localhost = "http://localhost:5002/api/user-details";
-const userDetailsPost = "http://localhost:5001/weather-app-44bc2/us-central1/weather_api/api/user-details";
+//const user_details_localhost = "http://localhost:5002/api/user-details";
+// const userDetails_server = "http://localhost:5001/weather-app-44bc2/us-central1/weather_api/api/user-details";
 
 const userDetailsAPI = "https://us-central1-weather-app-44bc2.cloudfunctions.net/weather_api/api/user-details";
 
@@ -26,7 +26,7 @@ export const getCurrentLocation = (): Promise<GeolocationPosition> =>
 
 export const saveUserDetails = async (userDetails: IUserDetails): Promise<void> => {
     try {
-        const response = await fetch(user_details_localhost, {
+        const response = await fetch(userDetailsAPI, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
