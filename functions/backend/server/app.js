@@ -11,7 +11,12 @@ const expressApp = express();
 expressApp.use(bodyParser.json());
 
 // CORS middleware
-expressApp.use(cors());
+expressApp.use(cors({
+  "origin": "*",
+  "methods": ["GET", "POST", "PUT", "DELETE"],
+  "allowedHeaders": ["Content-Type", "Authorization"],
+}));
+
 
 // API routes
 expressApp.use("/api/user-details", userDetailsRoutes);
