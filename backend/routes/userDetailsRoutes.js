@@ -1,9 +1,9 @@
 const express = require("express");
-const UserDetails = require("../models/userDetails");
+const UserDetails = require("../models/userDetails"); // Adjust path as needed
 const router = express.Router();
 
-// POST route for saving user details
-router.post("/", async (req, res) => {
+// Express route for saving user details
+router.post("/api/user-details", async (req, res) => {
   try {
     const { ip, login_country, login_state } = req.body;
 
