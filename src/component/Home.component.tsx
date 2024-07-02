@@ -11,7 +11,7 @@ const Home = () => {
   const [weatherData, setWeatherData] = useState<Iweather | null>(null);
   const [userDetails, setUserDetails] = useState<IUserDetails | null>(null);
 
-  const getTemperature = (event: React.FormEvent<HTMLFormElement>) => {
+  const getWeatherReport = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const cityNameInput = event.currentTarget.elements.namedItem(
       "cityName"
@@ -82,7 +82,7 @@ const Home = () => {
         <form
           className="form-content"
           id="cityForm"
-          onSubmit={getTemperature}
+          onSubmit={getWeatherReport}
           aria-labelledby="cityFormLabel"
         >
           <label id="cityFormLabel" htmlFor="cityName">
@@ -96,7 +96,7 @@ const Home = () => {
             aria-label="Search By City Name"
             required
           />
-          <button type="submit">Get temperature</button>
+          <button type="submit">Get Weather Report</button>
         </form>
       </section>
 
