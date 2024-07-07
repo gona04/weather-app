@@ -1,3 +1,4 @@
+require('dotenv').config(); // This line loads the environment variables from the .env file
 const Sequelize = require("sequelize");
 const fs = require("fs");
 const path = require("path");
@@ -7,13 +8,13 @@ const sslCert = fs.readFileSync(
     path.join(__dirname, "certs", "DigiCertGlobalRootCA.crt"),
 );
 
-// Initialize Sequelize with SSL configuration
+// Initialize Sequelize with SSL configuration and environment variables
 const sequelize = new Sequelize({
   dialect: "mysql",
-  host: "weather-api-db.mysql.database.azure.com",
-  username: "gona04",
-  password: "Goonja@1990",
-  database: "weather_app_db", 
+  host: process.env.DB_HOST,
+  username: process.env.DB_USERNAME,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_DATABASE, 
   dialectOptions: {
     ssl: {
       ca: sslCert,
