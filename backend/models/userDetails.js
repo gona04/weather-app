@@ -15,7 +15,7 @@ const UserDetails = sequelize.define("user_details", {
     type: DataTypes.STRING,
     allowNull: false,
   },
-  login_state: {
+  login_city: {
     type: DataTypes.STRING,
     allowNull: false,
   },

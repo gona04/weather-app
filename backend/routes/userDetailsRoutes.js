@@ -14,8 +14,8 @@ router.get("/", async (req, res) => {
 
 router.post("/", async (req, res) => {
   try {
-    const {ip, login_country, login_state} = req.body;
-    const userDt = {ip: ip, login_country: login_country, login_state: login_state};
+    const {ip, login_country, login_city} = req.body;
+    const userDt = {ip: ip, login_country: login_country, login_city: login_city};
     const newUserDetails = await UserDetails.create(userDt);
 
     res.status(201).json(newUserDetails);

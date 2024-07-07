@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "build",
+    "public": "build ",
     "ignore": [
       "firebase.json",
       "**/.*",
@@ -24,8 +24,7 @@
         "firebase-debug.*.log"
       ],
       "runtime": "nodejs18",
-      "predeploy": [
-      ]
+      "predeploy": []
     }
   ]
 }

@@ -46,7 +46,7 @@ const Home = () => {
             userId: "",
             ip: iPaddress.ip,
             login_country: weatherData.sys.country,
-            login_state: weatherData.name,
+            login_city: weatherData.name,
           };
           setUserDetails(userDt);
         } catch (error) {
